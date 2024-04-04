@@ -44,7 +44,7 @@ function App() {
           </div>
           <br />
           <br />
-          <div className='w-full h-full flex justify-center items-center'>
+          <div className='w-full h-full flex justify-center items-center dark:border-none border rounded-2xl border-sky-400 '>
             <input value={text} onChange={(e) => {
               setText(e.target.value)
             }} type="text" placeholder = "Write Text Here ..." className='outline-none w-11/12 h-full text-1xl rounded-l-2xl p-3'/>

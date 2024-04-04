@@ -50,7 +50,7 @@ const TodoBox = ({ addedText, setTodoList, todoList, keyIndex , setText}) => {
 
   return (
     <>
-      <div className= {`font-medium transition duration-1000 rounded-2xl w-full h-1/3  ${inputBgColor} flex justify-center items-center`}>
+      <div className= {`font-medium transition duration-1000 rounded-2xl w-full h-1/3  ${inputBgColor} flex justify-center items-center dark:border-none border border-sky-400 `}>
         <div className='w-1/2 h-full  flex justify-start gap-4 items-center'>
           <input type="checkbox" checked = {isChecked} onChange={onChangeHandler} className='ml-4 size-4' />
           {
