@@ -39,7 +39,7 @@ function App() {
         </div>
         <div className=' font-medium flex justify-center w-full h-full pt-20'>
         <div className='w-1/2 h-full  '>
-          <div className='w-full h-full flex justify-center items-center text-4xl text-red-700  font-bold my-0'>
+          <div className='w-full h-full flex justify-center items-center text-4xl  text-amber-950 dark:text-red-700  font-bold my-0'>
             Manage Your Todos
           </div>
           <br />
