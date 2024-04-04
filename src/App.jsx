@@ -1,11 +1,13 @@
 
 import TodoBox from './components/TodoBox'
 import { useState } from 'react'
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 function App() {
 
   const [text, setText] = useState('')
   const [todoList, setTodoList] = useState({})
+  const [darkThemeToggler, setDarkThemeToggler] = useState(true)
 
   const addHandler = () => {
     if(text) {
@@ -17,14 +19,31 @@ function App() {
     }
   }
 
+  const darkModeClickHandler = () => {
+    if(darkThemeToggler){
+      setDarkThemeToggler(!darkThemeToggler)
+      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.add('white')
+    }else{
+      setDarkThemeToggler(!darkThemeToggler)
+      document.documentElement.classList.remove('white')
+      document.documentElement.classList.add('dark')
+    }
+  }
+
   return (
 
-    
-      <div className=' font-medium flex justify-center w-full h-full pt-20 bg-zinc-900'>
-        <div className='w-1/2 h-full '>
-          <div className='w-full h-full flex justify-center items-center text-4xl text-red-700  font-bold my-7'>
+      <div>
+        <div className='flex justify-end'>
+          <DarkModeIcon onClick={darkModeClickHandler} fontSize='large' className=' mt-6 mr-6 hover:cursor-pointer text-black dark:text-white'/>
+        </div>
+        <div className=' font-medium flex justify-center w-full h-full pt-20'>
+        <div className='w-1/2 h-full  '>
+          <div className='w-full h-full flex justify-center items-center text-4xl text-red-700  font-bold my-0'>
             Manage Your Todos
           </div>
+          <br />
+          <br />
           <div className='w-full h-full flex justify-center items-center'>
             <input value={text} onChange={(e) => {
               setText(e.target.value)
@@ -44,6 +63,10 @@ function App() {
           </div>
         </div>
       </div>
+
+      </div>
+
+      
   )
 }
 
