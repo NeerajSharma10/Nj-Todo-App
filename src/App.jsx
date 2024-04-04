@@ -1,6 +1,6 @@
 
 import TodoBox from './components/TodoBox'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 function App() {
@@ -30,6 +30,18 @@ function App() {
       document.documentElement.classList.add('dark')
     }
   }
+
+  useEffect(() => {
+    const todoStrings = localStorage.getItem("todos")
+   if(todoStrings){
+      const todos = JSON.parse(todoStrings)
+      setTodoList(todos)
+    }
+  },[])
+
+  useEffect(() => {
+      localStorage.setItem("todos", JSON.stringify(todoList))
+  }, [todoList])
 
   return (
 
